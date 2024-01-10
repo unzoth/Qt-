@@ -30,12 +30,27 @@ void MasterView::goWelcomeView()
     connect(welcomeview,SIGNAL(goDepartmentView()),this,SLOT(goDepartmentView()));
     connect(welcomeview,SIGNAL(goDoctorView()),this,SLOT(goDoctorView()));
     connect(welcomeview,SIGNAL(goPatientView()),this,SLOT(goPatientView()));
+    connect(welcomeview,SIGNAL(goRecordView()),this,SLOT(goRecordView()));
+}
+
+void MasterView::goDoctorEdit(int doc)
+{
+    doctoredit=new DoctorEdit(this,doc);
+    pushWidgetToStackView(doctoredit);
+    connect(doctoredit,SIGNAL(goPreviousView()),this,SLOT(goPreviousView()));
 }
 
 void MasterView::goDoctorView()
 {
     doctorview=new DoctorView(this);
     pushWidgetToStackView(doctorview);
+}
+
+void MasterView::goDepartmentEdit(int dep)
+{
+    departmentedit=new DepartmentEdit(this,dep);
+    pushWidgetToStackView(departmentedit);
+    connect(departmentedit,SIGNAL(goPreviousView()),this,SLOT(goPreviousView()));
 }
 
 void MasterView::goDepartmentView()
@@ -56,6 +71,20 @@ void MasterView::goPatientView()
     patientview=new PatientView(this);
     pushWidgetToStackView(patientview);
     connect(patientview,SIGNAL(goPatientEdit(int)),this,SLOT(goPatientEdit(int)));
+}
+
+void MasterView::goRecordEdit(int rec)
+{
+    recordedit=new RecordEdit(this,rec);
+    pushWidgetToStackView(recordedit);
+    connect(recordedit,SIGNAL(goPreviousView()),this,SLOT(goPreviousView()));
+}
+
+void MasterView::goRecordView()
+{
+    recordview=new RecordView(this);
+    pushWidgetToStackView(recordview);
+    connect(recordview,SIGNAL(goRecordEdit(int)),this,SLOT(goRecordEdit(int)));
 }
 
 void MasterView::goPreviousView()
@@ -85,7 +114,7 @@ void MasterView::on_btBack_clicked()
 }
 
 
-void MasterView::on_stackedWidget_currentChanged(int arg1)
+void MasterView::on_stackedWidget_currentChanged()
 {
     int count=ui->stackedWidget->count();
     if(count>1)

@@ -15,6 +15,15 @@ public:
     explicit DepartmentView(QWidget *parent = nullptr);
     ~DepartmentView();
 
+private slots:
+    void on_drupSearch_clicked();
+
+    void on_drupAdd_clicked();
+
+    void on_drupDelete_clicked();
+
+    void on_drupEdit_clicked();
+
 private:
     Ui::DepartmentView *ui;
 };

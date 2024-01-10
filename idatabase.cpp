@@ -3,7 +3,7 @@
 void IDatabase::inindatabase()
 {
     database=QSqlDatabase::addDatabase("QSQLITE");
-    QString aFile="E:/work/homework3/qt/Lab4a.db";
+    QString aFile="E:/work/homework3/qt/Hospital.db";
     database.setDatabaseName(aFile);
     database.open();
 }

@@ -18,9 +18,7 @@ public:
 private slots:
     void on_btAdd_clicked();
     void on_btSearch_clicked();
-
     void on_btDelete_clicked();
-
     void on_btEdit_clicked();
 
 signals:

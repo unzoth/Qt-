@@ -12,3 +12,27 @@ DoctorView::~DoctorView()
 {
     delete ui;
 }
+
+void DoctorView::on_docSearch_clicked()
+{
+
+}
+
+
+void DoctorView::on_docAdd_clicked()
+{
+
+}
+
+
+void DoctorView::on_docDelete_clicked()
+{
+
+}
+
+
+void DoctorView::on_docEdit_clicked()
+{
+
+}
+

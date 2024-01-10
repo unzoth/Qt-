@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>科室管理</string>
+   <string>药品管理</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>

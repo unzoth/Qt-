@@ -12,3 +12,27 @@ RecordView::~RecordView()
 {
     delete ui;
 }
+
+void RecordView::on_recSearch_clicked()
+{
+
+}
+
+
+void RecordView::on_recAdd_clicked()
+{
+
+}
+
+
+void RecordView::on_recDelete_clicked()
+{
+
+}
+
+
+void RecordView::on_recEdit_clicked()
+{
+
+}
+

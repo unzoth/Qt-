@@ -125,7 +125,7 @@
           </spacer>
          </item>
          <item row="2" column="0">
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="btRecord">
            <property name="minimumSize">
             <size>
              <width>60</width>
