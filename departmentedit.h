@@ -23,6 +23,9 @@ private slots:
 
 private:
     Ui::DepartmentEdit *ui;
+    QDataWidgetMapper *dataMapper;
+signals:
+    void goPreviousView();
 };
 
 #endif // DEPARTMENTEDIT_H

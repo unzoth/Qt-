@@ -11,7 +11,7 @@ void IDatabase::inindatabase()
 bool IDatabase::initDepartmentModel()
 {
     departmentTabModel=new QSqlTableModel(this,database);
-    departmentTabModel->setTable("department");
+    departmentTabModel->setTable("drup");
     departmentTabModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
     departmentTabModel->setSort(departmentTabModel->fieldIndex("drupname"),Qt::AscendingOrder);
     if(!(departmentTabModel->select()))

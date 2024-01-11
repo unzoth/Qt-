@@ -23,6 +23,9 @@ private slots:
 
 private:
     Ui::DoctorEdit *ui;
+    QDataWidgetMapper *dataMapper;
+signals:
+    void goPreviousView();
 };
 
 #endif // DOCTOREDIT_H

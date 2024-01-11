@@ -24,7 +24,7 @@ private slots:
 
     void on_drupEdit_clicked();
 signals:
-    void goDepartmentEdit();
+    void goDepartmentEdit(int dep);
 
 private:
     Ui::DepartmentView *ui;

@@ -52,7 +52,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QTableView" name="docSearchR"/>
+      <widget class="QTableView" name="drupSearchR"/>
      </item>
     </layout>
    </item>

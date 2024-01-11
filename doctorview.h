@@ -23,6 +23,8 @@ private slots:
     void on_docDelete_clicked();
 
     void on_docEdit_clicked();
+signals:
+    void goDoctorEdit(int doc);
 
 private:
     Ui::DoctorView *ui;

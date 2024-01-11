@@ -23,6 +23,8 @@ private slots:
     void on_recDelete_clicked();
 
     void on_recEdit_clicked();
+signals:
+    void goRecordEdit(int rec);
 
 private:
     Ui::RecordView *ui;

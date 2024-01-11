@@ -23,6 +23,9 @@ private slots:
 
 private:
     Ui::RecordEdit *ui;
+    QDataWidgetMapper *dataMapper;
+signals:
+    void goPreviousView();
 };
 
 #endif // RECORDEDIT_H
