@@ -27,7 +27,7 @@ PatientView::~PatientView()
 
 void PatientView::on_btAdd_clicked()
 {
-    int cur=IDatabase::getInstance().addP();
+    int cur=IDatabase::getInstance().addP(3);
     emit goPatientEdit(cur);
 }
 
@@ -35,13 +35,13 @@ void PatientView::on_btAdd_clicked()
 void PatientView::on_btSearch_clicked()
 {
     QString filter=QString("name like '%%1%'").arg(ui->txtSearch->text());
-    IDatabase::getInstance().searchP(filter);
+    IDatabase::getInstance().searchP(filter,3);
 }
 
 
 void PatientView::on_btDelete_clicked()
 {
-    IDatabase::getInstance().deleteP();
+    IDatabase::getInstance().deleteP(3);
 }
 
 

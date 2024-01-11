@@ -15,13 +15,13 @@ PatientEdit::PatientEdit(QWidget *parent,int row) :
     dataMapper->setSubmitPolicy(QDataWidgetMapper::AutoSubmit);
 
     dataMapper->addMapping(ui->txtID,tabModel->fieldIndex("ID"));
-    dataMapper->addMapping(ui->txtName,tabModel->fieldIndex("NAME"));
-    dataMapper->addMapping(ui->txtIDC,tabModel->fieldIndex("ID_CARD"));
-    dataMapper->addMapping(ui->boxHeight,tabModel->fieldIndex("HEIGHT"));
-    dataMapper->addMapping(ui->boxWeight,tabModel->fieldIndex("WEIGHT"));
-    dataMapper->addMapping(ui->txtPhone,tabModel->fieldIndex("MOBILEPHONE"));
-    dataMapper->addMapping(ui->edDate,tabModel->fieldIndex("DOB"));
-    dataMapper->addMapping(ui->btSex,tabModel->fieldIndex("SEX"));
+    dataMapper->addMapping(ui->txtName,tabModel->fieldIndex("name"));
+    dataMapper->addMapping(ui->txtIDC,tabModel->fieldIndex("id_card"));
+    dataMapper->addMapping(ui->boxHeight,tabModel->fieldIndex("height"));
+    dataMapper->addMapping(ui->boxWeight,tabModel->fieldIndex("weight"));
+    dataMapper->addMapping(ui->txtPhone,tabModel->fieldIndex("phone"));
+    dataMapper->addMapping(ui->edDate,tabModel->fieldIndex("dob"));
+    dataMapper->addMapping(ui->btSex,tabModel->fieldIndex("sex"));
 
     dataMapper->setCurrentIndex(row);
 }
@@ -33,14 +33,14 @@ PatientEdit::~PatientEdit()
 
 void PatientEdit::on_btSave_clicked()
 {
-    IDatabase::getInstance().submitP();
+    IDatabase::getInstance().submitP(3);
     emit goPreviousView();
 }
 
 
 void PatientEdit::on_btCancel_clicked()
 {
-    IDatabase::getInstance().revertP();
+    IDatabase::getInstance().revertP(3);
     emit goPreviousView();
 }
 

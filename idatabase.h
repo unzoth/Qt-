@@ -21,17 +21,27 @@ private:
     void operator=(IDatabase const&)=delete;
     QSqlDatabase database;
     void inindatabase();
+
 signals:
 public:
+    bool initDepartmentModel();
+    bool initDoctorModel();
     bool initPatientModel();
-    int addP();
-    bool searchP(QString filter);
-    bool deleteP();
-    bool submitP();
-    void revertP();
+    bool initRecordModel();
+    int addP(int add);
+    bool searchP(QString filter,int sea);
+    void deleteP(int del);
+    void submitP(int sub);
+    void revertP(int rev);
 
+    QSqlTableModel *departmentTabModel;
+    QItemSelectionModel *theDepartmentSelection;
+    QSqlTableModel *doctorTabModel;
+    QItemSelectionModel *theDoctorSelection;
     QSqlTableModel *patientTabModel;
     QItemSelectionModel *thePatientSelection;
+    QSqlTableModel *recordTabModel;
+    QItemSelectionModel *theRecordSelection;
 };
 
 #endif // IDATABASE_H

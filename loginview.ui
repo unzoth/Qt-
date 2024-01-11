@@ -120,7 +120,11 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="textPW"/>
+            <widget class="QLineEdit" name="textPW">
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>

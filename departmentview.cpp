@@ -1,5 +1,6 @@
 #include "departmentview.h"
 #include "ui_departmentview.h"
+#include "idatabase.h"
 
 DepartmentView::DepartmentView(QWidget *parent) :
     QWidget(parent),

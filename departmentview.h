@@ -23,6 +23,8 @@ private slots:
     void on_drupDelete_clicked();
 
     void on_drupEdit_clicked();
+signals:
+    void goDepartmentEdit();
 
 private:
     Ui::DepartmentView *ui;
