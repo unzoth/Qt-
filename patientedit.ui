@@ -26,7 +26,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="txtID"/>
+        <widget class="QLineEdit" name="txtID">
+         <property name="maximumSize">
+          <size>
+           <width>171</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -40,7 +47,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="txtName"/>
+        <widget class="QLineEdit" name="txtName">
+         <property name="maximumSize">
+          <size>
+           <width>171</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -54,7 +68,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="txtIDC"/>
+        <widget class="QLineEdit" name="txtIDC">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -69,6 +90,9 @@
        </item>
        <item>
         <widget class="QComboBox" name="btSex">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
          <item>
           <property name="text">
            <string>男</string>
@@ -93,7 +117,28 @@
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="edDate"/>
+        <widget class="QDateEdit" name="edDate">
+         <property name="dateTime">
+          <datetime>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+           <year>2000</year>
+           <month>1</month>
+           <day>1</day>
+          </datetime>
+         </property>
+         <property name="minimumDateTime">
+          <datetime>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+           <year>1900</year>
+           <month>1</month>
+           <day>1</day>
+          </datetime>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -102,12 +147,16 @@
        <item>
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>身高：</string>
+          <string>身高(cm)：</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="boxHeight"/>
+        <widget class="QSpinBox" name="boxHeight">
+         <property name="maximum">
+          <number>999</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -116,12 +165,16 @@
        <item>
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>体重：</string>
+          <string>体重(kg)：</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="boxWeight"/>
+        <widget class="QSpinBox" name="boxWeight">
+         <property name="maximum">
+          <number>999</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -135,7 +188,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="txtPhone"/>
+        <widget class="QLineEdit" name="txtPhone">
+         <property name="maximumSize">
+          <size>
+           <width>171</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -168,10 +228,13 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>20</height>
+         <height>30</height>
         </size>
        </property>
       </spacer>

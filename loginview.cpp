@@ -17,7 +17,9 @@ LoginView::~LoginView()
 void LoginView::on_btLog_clicked()
 {
     QString status=IDatabase::getInstance().userLogin(ui->textID->text(),ui->textPW->text());
-    if(status=="loginOK")
-        emit logSuccess();
+    if(status=="admin")
+        emit logSuccess(1);
+    else if(status=="doctor")
+        emit logSuccess(2);
 }
 

@@ -27,7 +27,8 @@ public:
 
 public slots:
     void goLoginView();
-    void goWelcomeView();
+    void onLoginSuccess(int tap);
+    void goWelcomeView(int tap);
     void goDoctorEdit(int doc);
     void goDoctorView();
     void goDepartmentEdit(int dep);

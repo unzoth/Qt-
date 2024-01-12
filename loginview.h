@@ -18,7 +18,7 @@ public:
 private slots:
     void on_btLog_clicked();
 signals:
-    void logSuccess();
+    void logSuccess(int tap);
     void logFailed();
 private:
     Ui::LoginView *ui;

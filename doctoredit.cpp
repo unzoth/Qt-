@@ -19,6 +19,9 @@ DoctorEdit::DoctorEdit(QWidget *parent, int doc) :
     dataMapper->addMapping(ui->docAge, tabModel->fieldIndex("dage"));
     dataMapper->addMapping(ui->docSex, tabModel->fieldIndex("dsex"));
     dataMapper->addMapping(ui->docBook, tabModel->fieldIndex("book"));
+    dataMapper->addMapping(ui->docClass, tabModel->fieldIndex("dclass"));
+    dataMapper->addMapping(ui->docTime, tabModel->fieldIndex("dtime"));
+    dataMapper->addMapping(ui->docPlace, tabModel->fieldIndex("dplace"));
 
     dataMapper->setCurrentIndex(doc);
 }

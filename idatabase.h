@@ -28,6 +28,7 @@ public:
     bool initDoctorModel();
     bool initPatientModel();
     bool initRecordModel();
+
     int addP(int add);
     bool searchP(QString filter,int sea);
     void deleteP(int del);

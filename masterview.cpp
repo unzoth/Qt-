@@ -20,14 +20,24 @@ void MasterView::goLoginView()
 {
     loginview=new LoginView(this);
     pushWidgetToStackView(loginview);
-    connect(loginview,SIGNAL(logSuccess()),this,SLOT(goWelcomeView()));
+    connect(loginview,SIGNAL(logSuccess(int)),this,SLOT(onLoginSuccess(int)));
 }
 
-void MasterView::goWelcomeView()
+void MasterView::onLoginSuccess(int tap)
+{
+    if (tap == 1) {
+        goWelcomeView(1);
+    } else if (tap == 2) {
+        goWelcomeView(2);
+    }
+}
+
+void MasterView::goWelcomeView(int tap)
 {
     welcomeview=new WelcomeView(this);
     pushWidgetToStackView(welcomeview);
     connect(welcomeview,SIGNAL(goDepartmentView()),this,SLOT(goDepartmentView()));
+    if(tap==1)
     connect(welcomeview,SIGNAL(goDoctorView()),this,SLOT(goDoctorView()));
     connect(welcomeview,SIGNAL(goPatientView()),this,SLOT(goPatientView()));
     connect(welcomeview,SIGNAL(goRecordView()),this,SLOT(goRecordView()));

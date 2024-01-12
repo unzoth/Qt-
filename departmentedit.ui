@@ -26,7 +26,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="drupID"/>
+        <widget class="QLineEdit" name="drupID">
+         <property name="maximumSize">
+          <size>
+           <width>144</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -40,7 +47,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="drupName"/>
+        <widget class="QLineEdit" name="drupName">
+         <property name="maximumSize">
+          <size>
+           <width>144</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -54,7 +68,20 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="drupCount"/>
+        <widget class="QLineEdit" name="drupCount">
+         <property name="minimumSize">
+          <size>
+           <width>144</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>144</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -68,7 +95,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="drupSum"/>
+        <widget class="QSpinBox" name="drupSum">
+         <property name="maximum">
+          <number>99999</number>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -82,7 +116,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="drupPrice"/>
+        <widget class="QSpinBox" name="drupPrice">
+         <property name="maximum">
+          <number>99999</number>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -96,7 +137,18 @@
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="proDate"/>
+        <widget class="QDateEdit" name="proDate">
+         <property name="dateTime">
+          <datetime>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+           <year>2024</year>
+           <month>1</month>
+           <day>1</day>
+          </datetime>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -110,7 +162,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="drupMonth"/>
+        <widget class="QSpinBox" name="drupMonth">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>12</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -143,10 +202,13 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>20</height>
+         <height>30</height>
         </size>
        </property>
       </spacer>
