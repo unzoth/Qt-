@@ -11,15 +11,15 @@ void IDatabase::inindatabase()
     database.open();
 }
 
-bool IDatabase::initDepartmentModel()
+bool IDatabase::initDepartmentModel()//初始化数据表模型
 {
-    departmentTabModel=new QSqlTableModel(this,database);
+    departmentTabModel=new QSqlTableModel(this,database);//创建数据库模型
     departmentTabModel->setTable("drup");
     departmentTabModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    departmentTabModel->setSort(departmentTabModel->fieldIndex("drupname"),Qt::AscendingOrder);
+    departmentTabModel->setSort(departmentTabModel->fieldIndex("ID"),Qt::AscendingOrder);
     if(!(departmentTabModel->select()))
         return false;
-
+    // 设置表头显示的文本和字段关联
     departmentTabModel->setHeaderData(departmentTabModel->fieldIndex("ID"), Qt::Horizontal, "药品编号");
     departmentTabModel->setHeaderData(departmentTabModel->fieldIndex("drupname"), Qt::Horizontal, "药品名");
     departmentTabModel->setHeaderData(departmentTabModel->fieldIndex("count"), Qt::Horizontal, "剂量/规格");
@@ -37,7 +37,7 @@ bool IDatabase::initDoctorModel()
     doctorTabModel=new QSqlTableModel(this,database);
     doctorTabModel->setTable("doctor");
     doctorTabModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    doctorTabModel->setSort(doctorTabModel->fieldIndex("dname"),Qt::AscendingOrder);
+    doctorTabModel->setSort(doctorTabModel->fieldIndex("ID"),Qt::AscendingOrder);
     if(!(doctorTabModel->select()))
         return false;
 
@@ -59,7 +59,7 @@ bool IDatabase::initPatientModel()
     patientTabModel=new QSqlTableModel(this,database);
     patientTabModel->setTable("patient");
     patientTabModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    patientTabModel->setSort(patientTabModel->fieldIndex("name"),Qt::AscendingOrder);
+    patientTabModel->setSort(patientTabModel->fieldIndex("ID"),Qt::AscendingOrder);
     if(!(patientTabModel->select()))
         return false;
 
@@ -81,7 +81,7 @@ bool IDatabase::initRecordModel()
     recordTabModel=new QSqlTableModel(this,database);
     recordTabModel->setTable("record");
     recordTabModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    recordTabModel->setSort(recordTabModel->fieldIndex("name"),Qt::AscendingOrder);
+    recordTabModel->setSort(recordTabModel->fieldIndex("ID"),Qt::AscendingOrder);
     if(!(recordTabModel->select()))
         return false;
 
@@ -98,7 +98,7 @@ bool IDatabase::initRecordModel()
     return true;
 }
 
-int IDatabase::addP(int add)
+int IDatabase::addP(int add)//添加
 {
     QModelIndex cur;
     switch (add) {
@@ -125,7 +125,7 @@ int IDatabase::addP(int add)
     }
 }
 
-bool IDatabase::searchP(QString filter,int sea)
+bool IDatabase::searchP(QString filter,int sea)//查询
 {
     switch (sea) {
     case 1:departmentTabModel->setFilter(filter);return departmentTabModel->select();break;
@@ -135,7 +135,7 @@ bool IDatabase::searchP(QString filter,int sea)
     }
 }
 
-void IDatabase::deleteP(int del)
+void IDatabase::deleteP(int del)//删除
 {
     QModelIndex cur;
     switch (del) {
@@ -166,7 +166,7 @@ void IDatabase::deleteP(int del)
     }
 }
 
-void IDatabase::submitP(int sub)
+void IDatabase::submitP(int sub)//提交
 {
     switch (sub) {
     case 1:departmentTabModel->submitAll();departmentTabModel->select();break;
@@ -176,7 +176,7 @@ void IDatabase::submitP(int sub)
     }
 }
 
-void IDatabase::revertP(int rev)
+void IDatabase::revertP(int rev)//取消
 {
     switch (rev) {
     case 1:departmentTabModel->revertAll();break;
@@ -186,7 +186,7 @@ void IDatabase::revertP(int rev)
     }
 }
 
-QString IDatabase::userLogin(QString username, QString password)
+QString IDatabase::userLogin(QString username, QString password)//登录
 {
     QSqlQuery query;
     query.prepare("select username,password,class from user where username=:USER");

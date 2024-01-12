@@ -16,14 +16,14 @@ MasterView::~MasterView()
     delete ui;
 }
 
-void MasterView::goLoginView()
+void MasterView::goLoginView()//处理logSuccess信号
 {
     loginview=new LoginView(this);
     pushWidgetToStackView(loginview);
-    connect(loginview,SIGNAL(logSuccess(int)),this,SLOT(onLoginSuccess(int)));
+    connect(loginview,SIGNAL(logSuccess(int)),this,SLOT(onLoginSuccess(int)));//
 }
 
-void MasterView::onLoginSuccess(int tap)
+void MasterView::onLoginSuccess(int tap)//判断登录类别
 {
     if (tap == 1) {
         goWelcomeView(1);
@@ -38,7 +38,7 @@ void MasterView::goWelcomeView(int tap)
     pushWidgetToStackView(welcomeview);
     connect(welcomeview,SIGNAL(goDepartmentView()),this,SLOT(goDepartmentView()));
     if(tap==1)
-    connect(welcomeview,SIGNAL(goDoctorView()),this,SLOT(goDoctorView()));
+        connect(welcomeview,SIGNAL(goDoctorView()),this,SLOT(goDoctorView()));//医生不对医生的信息进行管理
     connect(welcomeview,SIGNAL(goPatientView()),this,SLOT(goPatientView()));
     connect(welcomeview,SIGNAL(goRecordView()),this,SLOT(goRecordView()));
 }
@@ -99,7 +99,7 @@ void MasterView::goRecordView()
     connect(recordview,SIGNAL(goRecordEdit(int)),this,SLOT(goRecordEdit(int)));
 }
 
-void MasterView::goPreviousView()
+void MasterView::goPreviousView()//上一页面
 {
     int count=ui->stackedWidget->count();
     if(count>1){

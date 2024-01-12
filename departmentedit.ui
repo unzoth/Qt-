@@ -63,7 +63,7 @@
        <item>
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>剂量：</string>
+          <string>剂量/规格：</string>
          </property>
         </widget>
        </item>
@@ -96,6 +96,9 @@
        </item>
        <item>
         <widget class="QSpinBox" name="drupSum">
+         <property name="minimum">
+          <number>1</number>
+         </property>
          <property name="maximum">
           <number>99999</number>
          </property>
@@ -117,6 +120,9 @@
        </item>
        <item>
         <widget class="QSpinBox" name="drupPrice">
+         <property name="minimum">
+          <number>1</number>
+         </property>
          <property name="maximum">
           <number>99999</number>
          </property>
